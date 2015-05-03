@@ -1,11 +1,9 @@
 Instruction:
 
 In RStudio
-1. setwd() to the directory containing all the data files and the R script
 1. source(run_analysis.R)
 2. look for the output file tidy_averages.txt in the working diretory 
 
-Original README......
 ==================================================================
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0

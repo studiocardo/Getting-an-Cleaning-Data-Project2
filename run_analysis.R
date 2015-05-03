@@ -71,4 +71,26 @@ names(subject_data_df) <- "subject"
 # bind all the data in a single data set
 combined <- cbind(x_data_df, y_data_df, subject_data_df)
 
+#
+# Step 5: From the data set in step 4, creates a second, 
+# independent tidy data set with the average of each variable for each activity and each subject.
+#
+
+# so we want to subset the data frame combined by each activity and subject and then compute the 
+# means and then recombine them back into a data frame before I print it out
+#
+
+# probably best to use a library
+# gonna use ddply function in the plyr library
+
+library(plyr)
+
+
+# 66 <- 68 columns but last two (activity & subject)
+#
+tidy_averages <- ddply(combined, .(subject, activity), function(x) colMeans(x[, 1:66]))
+
+write.table(tidy_averages, "tidy_averages.txt", row.name=FALSE)
+
+
 
